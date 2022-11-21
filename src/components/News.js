@@ -63,7 +63,7 @@ export default class News extends Component {
   async updateNews() {   //Humne ek function bana diya hai jisko hum log baar baar use krenge.
     this.props.setProgress(10);       
     //ek async function apni body ke andar wait kr skta hai kuch promises ke resolve hone ka.
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pagesize=${this.props.pageSize}`;//Page size ye btara hai ki ek page mai kitni news hongi aur pge ye ki konse no. ka page hai
+    let url = `http://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pagesize=${this.props.pageSize}`;//Page size ye btara hai ki ek page mai kitni news hongi aur pge ye ki konse no. ka page hai
     this.setState({ loading: true });  //Jab bhi loading true hogi toh ek loading badge ghumega(humne har rqst pr ye kiya hai)
     let data = await fetch(url);
     //fetch leti hai url aur ek return krti hai ek promise
